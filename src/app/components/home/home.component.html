@@ -1,0 +1,115 @@
+<app-header> </app-header>
+
+<div class="container content">
+  
+  <div class="bb">
+    <div class="btn-group btn-group-sm">
+      <button type="button" [ngClass]="{'active': grid }"
+      class="btn btn-light" (click)="changeView()"> 
+        <i class="fas fa-th"> </i> 
+      </button>
+      <button type="button" [ngClass]="{'active': !grid }"
+      class="btn btn-light" (click)="changeView()"> 
+        <i class="fas fa-bars"></i> 
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="grid">
+  <div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 grids" *ngFor="let quote of quotes | paginate: {itemsPerPage: 10,currentPage: p}"> 
+        <mat-card class="grid_card">
+
+          <div class="img_box">
+            <img mat-card-image src="../../assets/images/img1.jpg" class="imgg" alt="Photo of a Shiba Inu">
+          </div>
+
+          <div class="pic_upper_block text-center">
+            <p class="i_quote"> {{ quote.quote }} </p>
+            <p class="i_author"> {{ quote.author.name  }}</p>
+          </div>
+          
+          <mat-card-content>
+            <div>
+              <div class="quote">
+                {{ quote.quote }}
+              </div>
+           
+              <div class="author"> 
+                 <a> {{ quote.author.name }} </a>
+              </div>
+            </div>
+
+            <div class="topics">
+              <p *ngFor="let topic of quote.topics; let isLast=last" class="topic"> {{ topic }} {{isLast ? '' : ', '}} </p>
+            </div>
+
+          </mat-card-content>
+
+          <mat-card-actions class="bottom">
+            <p class="float-left"> ShareCount: {{ quote.shareCount}}</p>
+            <p class="float-right"> LikeCount: {{ quote.likeCount }}</p>
+            <div class="clearfix"> </div>
+          </mat-card-actions>
+
+        </mat-card>
+    </div>
+  </div>
+
+  <div class="pagi text-center">
+      <pagination-controls (pageChange)="p = $event"> </pagination-controls>
+  </div>
+  </div>
+  
+
+  <div *ngIf="!grid">
+  <div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-12" *ngFor="let quote of quotes | paginate: {itemsPerPage: 10,currentPage: p}">
+         
+        <mat-card class="list_card">
+            <div class="row">
+              <div class="col-lg-5 col-md-5 col-sm-5">
+                <div class="img_box">
+                  <img mat-card-image src="../../assets/images/img1.jpg" class="l_img" alt="Photo of a Shiba Inu">
+                </div>
+
+                <div class="pic_upper_block text-center">
+                  <p class="i_quote"> {{ quote.quote }} </p>
+                  <p class="i_author"> {{ quote.author.name  }}</p>
+                </div>
+                
+              </div>
+                <div class="col-lg-7 col-md-7 col-sm-7 l_quotee">
+                  <div class="quote">
+                      <p> {{ quote.quote }} </p>
+                  </div>
+                  <div class="author l_author">
+                      <p> {{ quote.author.name }}</p>
+                  </div>
+                </div>
+            </div>
+            
+            <div class="l_topics">
+              <p *ngFor="let topic of quote.topics ;let isLast=last" class="topic"> {{ topic }}  {{isLast ? '' : ', '}} </p>
+            </div>
+           
+            <mat-card-actions class="bottom">
+              <p class="float-left"> ShareCount: {{ quote.shareCount}}</p>
+              <p class="float-right"> LikeCount: {{ quote.likeCount }}</p>
+              <div class="clearfix"> </div>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12">
+
+    </div>
+    
+    <div class="pagi text-center">
+      <pagination-controls (pageChange)="p = $event"> </pagination-controls>
+    </div>
+  </div>
+  </div>
+
+</div>
+
+<app-footer> </app-footer>

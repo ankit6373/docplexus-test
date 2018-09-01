@@ -1,0 +1,149 @@
+.topic {
+    display: inline;
+    color: #00a;
+    font-size: 13px;
+}
+
+.active{
+    background-color: #449d44 !important;
+    color: #fff !important;
+}
+
+.bb{
+    margin-top: 7%;
+}
+
+.topics {
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    background: #f9f9f9; 
+    font-size: 13px;
+    padding: 3% 3% 3% 2%;
+    margin: 0 -9% 0 -9%;
+
+}
+
+.l_topics{
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    background: #f9f9f9; 
+    font-size: 13px;
+    padding: 1% 1% 1% 2%;
+    margin: 0 -3% 0 -3%;
+}
+
+.quote{
+    display: block;
+    font-family: helvetica neue,helvetica,verdana,arial,sans-serif!important;
+    font-size: 20px;
+    line-height: 26px;
+}
+
+.i_quote{
+    font-family: helvetica neue,helvetica,verdana,arial,sans-serif!important;
+    font-size: 20px;
+    line-height: 22px;
+    color: #fff;
+    font-weight: 700;
+    padding-top: 12%;
+    padding-right: 6%;
+}
+
+.i_author{
+    color: #fff;
+}
+
+.author{
+    color: #00a;
+    font-weight: 700;
+    padding: 3% 0 3% 0;
+}
+
+.list{
+    padding-top: 5%;
+    width: 100%;
+}
+
+.pic_upper_block{
+    position: absolute;
+    top: 0;
+}
+
+.img_box{
+    position: relative;
+}
+
+.l_img{
+    margin-top: -15% !important;
+}
+
+/deep/ .ngx-pagination  {
+    padding-top : 30px;
+}
+
+/deep/ mat-card{   
+    margin-top: 4%;
+}
+
+.bottom{
+    font-size:13px;
+}
+
+.bottoms{
+    display: inline;
+}
+
+.img_box, .author_box{
+   display: inline-block;
+}
+
+.row{
+    padding-top: 3%;
+}
+
+.l_quotee{
+    padding-left: 3%;
+}
+
+@media only screen and (min-width: 1000px)
+{
+    .content {
+        padding-top: 2%;
+        min-width: 1300px !important;
+    }
+
+    /deep/ .grid_card{
+        width: 300px; 
+    }
+    
+    /deep/ .list_card{
+        min-width: 930px;
+    }
+
+    .l_imgg{
+        width: 400px;
+    }
+
+    .bb{
+        margin-left: 95%;
+    }
+    
+}
+
+@media only screen and (max-width: 500px)
+{
+    .bb{
+        margin-top: 75px;
+    }
+
+    .topics {
+        margin: 0 -5% 0 -5%;
+    }
+    
+    .l_topics{
+        margin: 0 -4% 0 -4%;
+        padding: 2% 1% 2% 2%;
+    }
+    
+    
+}
